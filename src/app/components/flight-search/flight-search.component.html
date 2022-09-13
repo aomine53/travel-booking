@@ -1,29 +1,46 @@
-<form class="row g-3">
-  <div class="col-auto">
-    <label for="boarding" class="form-label">From</label>
-    <input type="text" class="form-control" id="boarding">
+<form>
+  <div class="row g-3 mt-3 mr">
+    <div class="form-check col-auto">
+      <input class="form-check-input" type="radio" name="trip-type" id="oneway" (click)="checkOneway()" checked>
+      <label class="form-check-label" for="oneway">
+        Oneway
+      </label>
+    </div>
+    <div class="form-check col-auto">
+      <input class="form-check-input" type="radio" name="trip-type" id="roundtrip" (click)="checkRoundtrip()">
+      <label class="form-check-label" for="roundtrip">
+        Round Trip
+      </label>
+    </div>
   </div>
-  <div class="col-auto">
-    <label for="destination" class="form-label">To</label>
-    <input type="text" class="form-control" id="destination">
-  </div>
-  <div class="col-auto">
-    <label for="departure" class="form-label">Departure</label>
-    <input type="date" class="form-control" id="departure">
-  </div>
-  <div class="col-auto">
-    <label for="return" class="form-label">Return</label>
-    <input type="date" class="form-control" id="return">
-  </div>
-  <div class="col-auto">
-    <label for="travel-class" class="form-label">Class</label>
-    <select name="travel-class" class="form-control" id="travel-class">
-      <option value="economy">Economy</option>
-      <option value="basic">Basic</option>
-      <option value="main">Main</option>
-    </select>
-  </div>
-  <div class="row justify-content-center mt-3">
-    <button type="submit" class="btn btn-primary col-md-3">SEARCH FLIGHTS</button>
+
+  <div class="row g-3">
+    <div class="col-auto">
+      <label for="boarding" class="form-label">From</label>
+      <input type="text" class="form-control" id="boarding">
+    </div>
+    <div class="col-auto">
+      <label for="destination" class="form-label">To</label>
+      <input type="text" class="form-control" id="destination">
+    </div>
+    <div class="col-auto">
+      <label for="departure" class="form-label">Departure</label>
+      <input type="date" class="form-control" id="departure">
+    </div>
+    <div class="col-auto" [style.display]="returnDisplay">
+      <label for="return" class="form-label">Return</label>
+      <input type="date" class="form-control" id="return">
+    </div>
+    <div class="col-auto">
+      <label for="travel-class" class="form-label">Class</label>
+      <select name="travel-class" class="form-control" id="travel-class">
+        <option value="economy">Economy</option>
+        <option value="basic">Basic</option>
+        <option value="main">Main</option>
+      </select>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <button type="submit" class="btn btn-primary col-md-3">SEARCH FLIGHTS</button>
+    </div>
   </div>
 </form>

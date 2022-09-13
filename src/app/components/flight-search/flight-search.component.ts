@@ -6,9 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flight-search.component.css']
 })
 export class FlightSearchComponent implements OnInit {
+  returnDisplay: string
+  constructor() { 
+    this.returnDisplay = "none"
 
-  constructor() { }
+    
+  }
 
   ngOnInit(): void {
+  }
+
+  checkOneway(){
+    this.returnDisplay = "none"
+  }
+
+  checkRoundtrip(){
+    this.returnDisplay = "block"
   }
 }
