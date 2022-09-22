@@ -1,0 +1,65 @@
+[
+    {
+        "boarding" : "Pune",
+        "destination" : "Surat",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare" : "2000",
+        "flightName": "IndiGo"
+    },
+    {
+        "boarding" : "Pune",
+        "destination" : "Bengaluru",
+        "departure" : "16/09/2022",
+        "departureTime" : "09:00",
+        "arrivalTime" :  "12:00",
+        "fare": "5000",
+        "flightName": "SpiceJet"
+    },
+    {
+        "boarding" : "Pune",
+        "destination" : "Bengaluru",
+        "departure" : "18/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "IndiGo"
+    },
+    {
+        "boarding" : "Mumbai",
+        "destination" : "Delhi",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "SpiceJet"
+    },
+    {
+        "boarding" : "Delhi",
+        "destination" : "Mumbai",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "IndiGo"
+    },
+    {
+        "boarding" : "Chandigarh",
+        "destination" : "Chennai",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "SpiceJet"
+    },
+    {
+        "boarding" : "Pune",
+        "destination" : "Kolkata",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:30",
+        "fare": "7000",
+        "flightName": "IndiGo"
+    }
+]

@@ -1,0 +1,65 @@
+<div class="container mt-3 text-center" style="background-color: silver;">
+  <div class="row justify-content-md-center">
+    <img class="col-auto" src="../../../assets/img/{{flightDetails.flightName}}.jpg"
+      alt="{{flightDetails.flightName}} logo" style="width: 90px;height: 50px">
+    <h5 class="col-auto my-auto">{{flightDetails.flightName}}</h5>
+  </div>
+  <h3 class="mt-2">
+    <pre>{{flightDetails.boarding}}  to  {{flightDetails.destination}}</pre>
+  </h3>
+  <h5>
+    <pre>{{flightDetails.departureTime}}       {{flightDetails.arrivalTime}}</pre>
+  </h5>
+  <h4>₹ {{flightDetails.fare}}/-</h4>
+  <small>FOR 1 ADULT</small>
+</div>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let obj of dataArray; let i=index" class="mt-5">
+      <div class="row justify-content-center ">
+        <div class="col-auto">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" name="fname{{i}}" [(ngModel)]="obj.fname" class="form-control">
+        </div>
+        <div class="col-auto">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" name="lname{{i}}" [(ngModel)]="obj.lname" class="form-control">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" name="age{{i}}" [(ngModel)]="obj.age" class="form-control">
+        </div>
+        <div class="col-3">
+          <label for="travelclass" class="form-label">Class</label>
+          <select name="travelclass" [(ngModel)]="obj.travelClass" class="form-control">
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+          </select>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-5">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email{{i}}" [(ngModel)]="obj.email" class="form-control">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-5">
+          <label for="contactNo" class="form-label">Mobile Number</label>
+          <input type="number" name="contactNo{{i}}" [(ngModel)]="obj.contactNo" class="form-control">
+        </div>
+      </div>
+      <div class="row justify-content-center my-3">
+        <button type="button" class="btn btn-danger col-1" (click)="deleteForm(i)">Remove</button>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5">
+      <button type="button" class="btn btn-success col-2 mx-3" (click)="addForm()">Add Passenger</button>
+      <button type="submit" class="btn btn-primary col-2" *ngIf="len!=0">Submit</button>
+    </div>
+  </form>
+</div>

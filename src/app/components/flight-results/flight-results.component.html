@@ -1,0 +1,20 @@
+<div class="list-group">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Serial No.</th>
+        <th scope="col">Flight Name</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Arrival Time</th>
+        <th scope="col">Duration( Hours)</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let flight of resflights; let indexof = index">
+      <tr app-flight-item [flight]="flight" [indexof]="indexof"></tr>
+    </tbody>
+  </table>
+</div>

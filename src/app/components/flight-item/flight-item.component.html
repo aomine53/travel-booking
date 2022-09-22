@@ -1,0 +1,10 @@
+<th scope="row">{{indexof+1}}</th>
+<td><img src="../../../assets/img/{{flight.flightName}}.jpg" alt="{{flight.flightName}} logo" style="width:50px;height:35px">
+    {{ flight.flightName }}</td>
+<td>{{ flight.boarding }}</td>
+<td>{{ flight.destination }}</td>
+<td>{{ flight.departureTime }}</td>
+<td>{{ flight.arrivalTime }}</td>
+<td>{{travel_duration}}</td>
+<td>{{ flight.fare }}</td>
+<td><a type="button" class="btn btn-primary" (click)="onClick()">Book</a></td>
