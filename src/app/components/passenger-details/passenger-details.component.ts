@@ -39,6 +39,6 @@ export class PassengerDetailsComponent implements OnInit {
     // console.log(this.dataArray);
     this.flightsService.setPassengerDetails(this.dataArray);
     this.router?.navigateByUrl("/confirmation-page");
-    console.log(this.flightsService.getPassengerDetails());
+    // console.log(this.flightsService.getPassengerDetails());
   }
 }

@@ -1,1 +1,37 @@
-<p>confirm-details works!</p>
+<div class="container mt-3 text-center" style="background-color: silver;">
+  <div class="row justify-content-md-center">
+    <img class="col-auto" src="../../../assets/img/{{flightDetails.flightName}}.jpg"
+      alt="{{flightDetails.flightName}} logo" style="width: 90px;height: 50px">
+    <h5 class="col-auto my-auto">{{flightDetails.flightName}}</h5>
+  </div>
+  <h3 class="mt-2">
+    <pre>{{flightDetails.boarding}}  to  {{flightDetails.destination}}</pre>
+  </h3>
+  <h5>
+    <pre>{{flightDetails.departureTime}}       {{flightDetails.arrivalTime}}</pre>
+  </h5>
+  <h4>₹ {{fare}}/-</h4>
+  <!-- <small>FOR 1 ADULT</small> -->
+</div>
+
+
+<div class="container">
+
+  <div *ngFor="let passenger of passengerDetails" class="container justify-content-center">
+    <pre>
+              <h5>
+                  Name: {{passenger.fname}} {{passenger.lname}}   Age: {{passenger.age}}
+                  
+                  Contact No: {{passenger.contactNo}}  
+                  
+                  Email id: {{passenger.email}} 
+                  
+                  Class: {{passenger.travelClass}}</h5>
+                </pre>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <button type="button" routerLink="/payment-page" class="btn btn-success justify-content-center">Continue</button>
+    </div>
+  </div>
+</div>

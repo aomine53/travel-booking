@@ -34,7 +34,7 @@
         </div>
         <div class="col-3">
           <label for="travelclass" class="form-label">Class</label>
-          <select name="travelclass" [(ngModel)]="obj.travelClass" class="form-control">
+          <select name="travelclass{{i}}" [(ngModel)]="obj.travelClass" class="form-control">
             <option value="economy">Economy</option>
             <option value="business">Business</option>
           </select>

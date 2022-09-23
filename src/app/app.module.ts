@@ -11,6 +11,8 @@ import { FlightsService } from './services/flights.service';
 import { FlightItemComponent } from './components/flight-item/flight-item.component';
 import { PassengerDetailsComponent } from './components/passenger-details/passenger-details.component';
 import { ConfirmDetailsComponent } from './components/confirm-details/confirm-details.component';
+import { PaymentPageComponent } from './components/payment-page/payment-page.component';
+import { SuccessPageComponent } from './components/success-page/success-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ConfirmDetailsComponent } from './components/confirm-details/confirm-de
     FlightResultsComponent,
     FlightItemComponent,
     PassengerDetailsComponent,
-    ConfirmDetailsComponent
+    ConfirmDetailsComponent,
+    PaymentPageComponent,
+    SuccessPageComponent
   ],
   imports: [
     BrowserModule,

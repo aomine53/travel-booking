@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-lg-7 my-5">
+    <h2>Payment Details</h2>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-lg-7 my-1 ">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12">
+          <div class="form__div">
+            <input type="text" class="form-control" placeholder="Card Number">
+            <!-- <label for="" class="form__label"></label> -->
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form__div">
+            <input type="date" class="form-control" placeholder="MM/YY ">
+            <!-- <label for="" class="form__label">MM / yy</label> -->
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form__div">
+            <input type="password" class="form-control" placeholder="CVV">
+            <!-- <label for="" class="form__label">cvv code</label> -->
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form__div">
+            <input type="text" class="form-control" placeholder="Card holder name">
+            <!-- <label for="" class="form__label">name on the card</label> -->
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary w-100" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
