@@ -6,4 +6,5 @@ export class FlightResult{
     arrivalTime! : string
     fare! : string
     flightName! : string
+    duration! : string
 }

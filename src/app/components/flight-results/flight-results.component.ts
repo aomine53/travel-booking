@@ -2,6 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { FlightResult } from 'src/app/models/flight-result.model';
 import { FlightSearch } from 'src/app/models/flight-search.model';
 import { FlightsService } from 'src/app/services/flights.service';
+import { SortPipe } from 'src/app/pipes/sort.pipe';
 import * as data from '../../../assets/flights.json';
 
 @Component({
@@ -10,10 +11,15 @@ import * as data from '../../../assets/flights.json';
   styleUrls: ['./flight-results.component.css'],
 })
 export class FlightResultsComponent implements OnInit {
+  sortByParam! : string
+  sortDirection! : string
+  filterByParam! : string
+  filterString! : string
   journeyDetails?: FlightSearch;
   flights: FlightResult[];
   resflights! : FlightResult[];
   constructor(private flightsService: FlightsService) {
+    this.sortDirection = 'asc'
     this.flights = (data as any).default;
   }
 
@@ -27,5 +33,23 @@ export class FlightResultsComponent implements OnInit {
       );
     });  
     
+  }
+
+  onSort(){
+    this.sortByParam = "fare"
+    if(this.sortDirection == 'desc'){
+      this.sortDirection = 'asc'
+    }else{
+      this.sortDirection = 'desc'
+    }
+  }
+
+  onSort1(){
+    this.sortByParam = "duration"
+    if(this.sortDirection == 'desc'){
+      this.sortDirection = 'asc'
+    }else{
+      this.sortDirection = 'desc'
+    }
   }
 }

@@ -1,3 +1,7 @@
 .input-group-append {
     cursor: pointer;
   }
+
+.radio-margin{
+  padding-left: 100 px;
+}

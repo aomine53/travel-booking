@@ -6,7 +6,8 @@
         "departureTime" : "06:00",
         "arrivalTime" :  "08:00",
         "fare" : "2000",
-        "flightName": "IndiGo"
+        "flightName": "IndiGo",
+        "duration" : "2"
     },
     {
         "boarding" : "Pune",
@@ -14,8 +15,19 @@
         "departure" : "16/09/2022",
         "departureTime" : "09:00",
         "arrivalTime" :  "12:00",
-        "fare": "5000",
-        "flightName": "SpiceJet"
+        "fare": "3000",
+        "flightName": "SpiceJet",
+        "duration" : "3"
+    },
+    {
+        "boarding" : "Pune",
+        "destination" : "Bengaluru",
+        "departure" : "26/09/2022",
+        "departureTime" : "15:00",
+        "arrivalTime" :  "19:00",
+        "fare": "1900",
+        "flightName": "SpiceJet",
+        "duration" : "4"
     },
     {
         "boarding" : "Pune",
@@ -24,7 +36,8 @@
         "departureTime" : "06:00",
         "arrivalTime" :  "08:00",
         "fare": "5000",
-        "flightName": "IndiGo"
+        "flightName": "IndiGo",
+        "duration" : "2"
     },
     {
         "boarding" : "Mumbai",
@@ -33,7 +46,8 @@
         "departureTime" : "06:00",
         "arrivalTime" :  "08:00",
         "fare": "5000",
-        "flightName": "SpiceJet"
+        "flightName": "SpiceJet",
+        "duration" : "2"
     },
     {
         "boarding" : "Delhi",
@@ -42,7 +56,8 @@
         "departureTime" : "06:00",
         "arrivalTime" :  "08:00",
         "fare": "5000",
-        "flightName": "IndiGo"
+        "flightName": "IndiGo",
+        "duration" : 2
     },
     {
         "boarding" : "Chandigarh",
@@ -51,7 +66,8 @@
         "departureTime" : "06:00",
         "arrivalTime" :  "08:00",
         "fare": "5000",
-        "flightName": "SpiceJet"
+        "flightName": "SpiceJet",
+        "duration" : 2
     },
     {
         "boarding" : "Pune",
@@ -60,6 +76,7 @@
         "departureTime" : "06:00",
         "arrivalTime" :  "08:30",
         "fare": "7000",
-        "flightName": "IndiGo"
+        "flightName": "IndiGo",
+        "duration" : 2.5
     }
 ]

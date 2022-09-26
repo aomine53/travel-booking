@@ -13,6 +13,8 @@ import { PassengerDetailsComponent } from './components/passenger-details/passen
 import { ConfirmDetailsComponent } from './components/confirm-details/confirm-details.component';
 import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 import { SuccessPageComponent } from './components/success-page/success-page.component';
+import { SortPipe } from './pipes/sort.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SuccessPageComponent } from './components/success-page/success-page.com
     PassengerDetailsComponent,
     ConfirmDetailsComponent,
     PaymentPageComponent,
-    SuccessPageComponent
+    SuccessPageComponent,
+    SortPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
