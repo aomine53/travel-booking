@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="resflights.length != 0; else elseBlock" class="container">
   <div class="row my-3">
     <div class="col-2">
       <select class="form-select" [(ngModel)]="filterByParam">
@@ -14,26 +14,35 @@
       </div>
     </div>
   </div>
+
+
+  <div class="list-group row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Serial No.</th>
+          <th scope="col">Flight Name</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Departure Time</th>
+          <th scope="col">Arrival Time</th>
+          <th scope="col"><a type="button" (click)="onSort1()">Duration( Hours)</a></th>
+          <th scope="col"><a type="button" (click)="onSort()">Amount</a></th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="let flight of resflights | filter:[filterByParam, setfilterString] | sort:[sortByParam,sortDirection] ; let indexof = index">
+        <tr app-flight-item [flight]="flight" [indexof]="indexof"></tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
-<div class="list-group">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Serial No.</th>
-        <th scope="col">Flight Name</th>
-        <th  scope="col">From</th>
-        <th scope="col">To</th>
-        <th scope="col">Departure Time</th>
-        <th scope="col">Arrival Time</th>
-        <th scope="col"><a type="button" (click)="onSort1()">Duration( Hours)</a></th>
-        <th scope="col"><a type="button" (click)="onSort()">Amount</a></th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody
-      *ngFor="let flight of resflights | filter:[filterByParam, setfilterString] | sort:[sortByParam,sortDirection] ; let indexof = index">
-      <tr app-flight-item [flight]="flight" [indexof]="indexof"></tr>
-    </tbody>
-  </table>
-</div>
+<ng-template #elseBlock>
+  <div class="cotainer mt-5" style="text-align: center;">
+    <h5> <i> No flights avaliable on this route </i></h5>
+    <a href="/" type="button" class="btn btn-sm btn-light my-2">Home</a>
+  </div>
+</ng-template>
