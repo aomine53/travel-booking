@@ -15,10 +15,13 @@ export class FlightResultsComponent implements OnInit {
   sortDirection! : string
   filterByParam! : string
   filterString! : string
+  setfilterString! : string
   journeyDetails?: FlightSearch;
   flights: FlightResult[];
   resflights! : FlightResult[];
   constructor(private flightsService: FlightsService) {
+    this.filterByParam = 'fare'
+    this.setfilterString = ''
     this.sortDirection = 'asc'
     this.flights = (data as any).default;
   }
@@ -51,5 +54,13 @@ export class FlightResultsComponent implements OnInit {
     }else{
       this.sortDirection = 'desc'
     }
+  }
+
+  addFilter(){
+    this.setfilterString = this.filterString
+  }
+
+  clearFilters(){
+    this.setfilterString = ''
   }
 }
