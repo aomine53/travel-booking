@@ -2,7 +2,6 @@ import { Component, OnInit, Output } from '@angular/core';
 import { FlightResult } from 'src/app/models/flight-result.model';
 import { FlightSearch } from 'src/app/models/flight-search.model';
 import { FlightsService } from 'src/app/services/flights.service';
-import { SortPipe } from 'src/app/pipes/sort.pipe';
 import * as data from '../../../assets/flights.json';
 
 @Component({

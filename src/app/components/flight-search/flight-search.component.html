@@ -17,11 +17,24 @@
   <div class="row g-3">
     <div class="col-auto">
       <label for="boarding" class="form-label">From</label>
-      <input type="text" [(ngModel)]="flightSearch.boarding" class="form-control" name="boarding" >
+      <input type="text" [(ngModel)]="flightSearch.boarding" class="form-control" name="boarding" list="boardplaces"
+        autocomplete="off">
+      <datalist id="boardplaces">
+        <option *ngFor="let place of boardingPlaces" [value]="place">{{place}}</option>
+      </datalist>
+    </div>
+    <div class="col-auto align-self-end">
+      <button type="button" (click)="changePlaces()" class="btn btn-sm mb-1 btn-light text-nowrap">
+        <-->
+      </button>
     </div>
     <div class="col-auto">
       <label for="destination" class="form-label">To</label>
-      <input type="text" [(ngModel)]="flightSearch.destination" class="form-control" name="destination" >
+      <input type="text" [(ngModel)]="flightSearch.destination" class="form-control" name="destination" list="destplaces"
+        autocomplete="off">
+        <datalist id="destplaces">
+          <option *ngFor="let place of destinationPlaces" [value]="place">{{place}}</option>
+        </datalist>
     </div>
     <div class="col-auto">
       <label for="departure" class="form-label">Departure</label>
@@ -29,11 +42,11 @@
     </div>
     <div class="col-auto" [style.display]="returnDisplay">
       <label for="return" class="form-label">Return</label>
-      <input type="date" [(ngModel)]="flightSearch.return" class="form-control" name="return" >
+      <input type="date" [(ngModel)]="flightSearch.return" class="form-control" name="return">
     </div>
     <div class="col-auto">
       <label for="travelclass" class="form-label">Class</label>
-      <select [(ngModel)]="flightSearch.travelclass" class="form-control" name="travelclass" >
+      <select [(ngModel)]="flightSearch.travelclass" class="form-control" name="travelclass">
         <option value="economy">Economy</option>
         <option value="business">Business</option>
       </select>

@@ -40,6 +40,16 @@
         "duration" : "2"
     },
     {
+        "boarding" : "Patna",
+        "destination" : "Bengaluru",
+        "departure" : "18/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "IndiGo",
+        "duration" : "2"
+    },
+    {
         "boarding" : "Mumbai",
         "destination" : "Delhi",
         "departure" : "15/09/2022",
