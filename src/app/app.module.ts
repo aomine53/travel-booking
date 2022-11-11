@@ -15,6 +15,9 @@ import { PaymentPageComponent } from './components/payment-page/payment-page.com
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HotelSearchComponent } from './components/hotel-search/hotel-search.component';
+import { CarSearchComponent } from './components/car-search/car-search.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     PaymentPageComponent,
     SuccessPageComponent,
     SortPipe,
-    FilterPipe
+    FilterPipe,
+    HotelSearchComponent,
+    CarSearchComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

@@ -14,13 +14,16 @@ export class FlightResultsComponent implements OnInit {
   sortDirection! : string
   filterByParam! : string
   filterString! : string
+  filterString1! : string
   setfilterString! : string
+  setfilterString1! : string
   journeyDetails?: FlightSearch;
   flights: FlightResult[];
   resflights! : FlightResult[];
   constructor(private flightsService: FlightsService) {
     this.filterByParam = 'fare'
     this.setfilterString = ''
+    this.setfilterString1 = ''
     this.sortDirection = 'asc'
     this.flights = (data as any).default;
   }
@@ -28,7 +31,7 @@ export class FlightResultsComponent implements OnInit {
   ngOnInit(): void {
     this.journeyDetails = this.flightsService?.getJourneyDetails();
 
-    this.resflights = this.flights.filter((obj) => {
+    this.resflights = this.flights.filter((obj) => {                  //filter flights and get resflights     
       return (
         obj.boarding == this.journeyDetails?.boarding &&
         obj.destination == this.journeyDetails?.destination
@@ -57,9 +60,11 @@ export class FlightResultsComponent implements OnInit {
 
   addFilter(){
     this.setfilterString = this.filterString
+    this.setfilterString1 = this.filterString1
   }
 
   clearFilters(){
     this.setfilterString = ''
+    this.setfilterString1 = ''
   }
 }

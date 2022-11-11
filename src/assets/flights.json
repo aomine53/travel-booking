@@ -41,6 +41,36 @@
     },
     {
         "boarding" : "Patna",
+        "destination" : "Bhuj",
+        "departure" : "18/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "IndiGo",
+        "duration" : "2"
+    },
+    {
+        "boarding" : "Puducherry",
+        "destination" : "Bhopal",
+        "departure" : "18/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "IndiGo",
+        "duration" : "2"
+    },
+    {
+        "boarding" : "Porbandar",
+        "destination" : "Bhubaneswar",
+        "departure" : "18/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "IndiGo",
+        "duration" : "2"
+    },
+    {
+        "boarding" : "Pantnagar",
         "destination" : "Bengaluru",
         "departure" : "18/09/2022",
         "departureTime" : "06:00",
@@ -52,6 +82,36 @@
     {
         "boarding" : "Mumbai",
         "destination" : "Delhi",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "SpiceJet",
+        "duration" : "2"
+    },
+    {
+        "boarding" : "Bhubneswar",
+        "destination" : "Delhi",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "SpiceJet",
+        "duration" : "2"
+    },
+    {
+        "boarding" : "Bhopal",
+        "destination" : "Delhi",
+        "departure" : "15/09/2022",
+        "departureTime" : "06:00",
+        "arrivalTime" :  "08:00",
+        "fare": "5000",
+        "flightName": "SpiceJet",
+        "duration" : "2"
+    },
+    {
+        "boarding" : "Bengaluru",
+        "destination" : "Pune",
         "departure" : "15/09/2022",
         "departureTime" : "06:00",
         "arrivalTime" :  "08:00",

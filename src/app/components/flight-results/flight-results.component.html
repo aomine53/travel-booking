@@ -8,7 +8,8 @@
     </div>
     <div class="col-5">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Filter" [(ngModel)]="filterString">
+        <input type="text" class="form-control" placeholder="From" [(ngModel)]="filterString">
+        <input type="text" class="form-control" placeholder="To" [(ngModel)]="filterString1">
         <button class="btn btn-outline-secondary" type="button" (click)="addFilter()">Apply</button>
         <button class="btn btn-outline-secondary" type="button" (click)="clearFilters()">Clear</button>
       </div>
@@ -31,10 +32,10 @@
           <th scope="col">Action</th>
         </tr>
       </thead>
-      <tbody
-        *ngFor="let flight of resflights | filter:[filterByParam, setfilterString] | sort:[sortByParam,sortDirection] ; let indexof = index">
-        <tr app-flight-item [flight]="flight" [indexof]="indexof"></tr>
-      </tbody>
+        <tbody
+          *ngFor="let flight of (resflights | filter:[filterByParam, setfilterString, setfilterString1] | sort:[sortByParam,sortDirection]) as filtres ; let indexof = index">
+          <tr app-flight-item [flight]="flight" [indexof]="indexof"></tr>
+        </tbody>
     </table>
   </div>
 
