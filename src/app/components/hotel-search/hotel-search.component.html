@@ -1,1 +1,30 @@
-<p>hotel-search works!</p>
+
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()" class="ms-5 ps-5">
+
+  <div class="row g-3 mt-5" >
+    <div class="col-auto">
+      <label for="boarding" class="form-label">Destination</label>
+      <input type="text" [(ngModel)]="flightSearch.boarding" class="form-control" name="boarding" list="boardplaces"
+        autocomplete="off">
+      <datalist id="boardplaces">
+        <option *ngFor="let place of boardingPlaces" [value]="place">{{place}}</option>
+      </datalist>
+    </div>
+    <div class="col-auto">
+      <label for="checkin" class="form-label">Check in</label>
+      <input type="date"  class="form-control" name="checkin">
+    </div>
+    <div class="col-auto">
+      <label for="checkout" class="form-label">Check out</label>
+      <input type="date" class="form-control" name="checkout">
+    </div>
+    <div class="col-auto">
+        <label for="rooms" class="form-label">Rooms</label>
+        <input type="number" class="form-control" name="rooms">
+    </div>
+    <div class="row justify-content-start mt-3" style="margin-left: 275px;">
+      <button type="submit" class="btn btn-primary col-md-3">SEARCH HOTELS</button>
+    </div>
+  </div>
+</form>

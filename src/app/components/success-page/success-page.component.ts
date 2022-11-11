@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightsService } from 'src/app/services/flights.service';
 
 @Component({
   selector: 'app-success-page',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./success-page.component.css']
 })
 export class SuccessPageComponent implements OnInit {
-
-  constructor() { }
+  pageName! : string
+  constructor(private flightsService: FlightsService) { }
 
   ngOnInit(): void {
+      this.pageName = this.flightsService.getPageName()
   }
 
 }

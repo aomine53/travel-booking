@@ -16,6 +16,7 @@ export class FlightSearchComponent implements OnInit {
   boardingPlaces: string[];
   destinationPlaces: string[];
   flights: FlightResult[];
+  pageName!: string;
   constructor(private flightsService: FlightsService, private router: Router) {
     this.returnDisplay = 'none';
     this.flightSearch = {
@@ -42,6 +43,9 @@ export class FlightSearchComponent implements OnInit {
     });
     
     this.destinationPlaces = Array.from(new Set(this.destinationPlaces))
+
+    this.pageName = "tickets are"
+    this.flightsService.setPageName(this.pageName)
   }
 
   checkOneway() {

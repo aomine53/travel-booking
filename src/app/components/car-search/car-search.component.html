@@ -1,1 +1,39 @@
-<p>car-search works!</p>
+
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()" class="ms-5 ps-5">
+
+  <div class="row g-3 mt-5" >
+    <div class="col-auto">
+      <label for="boarding" class="form-label">From</label>
+      <input type="text" [(ngModel)]="flightSearch.boarding" class="form-control" name="boarding" list="boardplaces"
+        autocomplete="off">
+      <datalist id="boardplaces">
+        <option *ngFor="let place of boardingPlaces" [value]="place">{{place}}</option>
+      </datalist>
+    </div>
+    <div class="col-auto align-self-end">
+      <button type="button" (click)="changePlaces()" class="btn btn-sm mb-1 btn-light text-nowrap">
+        <-->
+      </button>
+    </div>
+    <div class="col-auto">
+      <label for="destination" class="form-label">To</label>
+      <input type="text" [(ngModel)]="flightSearch.destination" class="form-control" name="destination" list="destplaces"
+        autocomplete="off">
+        <datalist id="destplaces">
+          <option *ngFor="let place of destinationPlaces" [value]="place">{{place}}</option>
+        </datalist>
+    </div>
+    <div class="col-auto">
+      <label for="departure" class="form-label">Pickup Date</label>
+      <input type="date" [(ngModel)]="flightSearch.departure" class="form-control" name="departure">
+    </div>
+    <div class="col-auto">
+      <label for="departure" class="form-label">Pickup Time</label>
+      <input type="time" [(ngModel)]="flightSearch.departure" class="form-control" name="departure">
+    </div>
+    <div class="row justify-content-start mt-3" style="margin-left: 300px;">
+      <button type="submit" class="btn btn-primary col-md-3">SEARCH CARS</button>
+    </div>
+  </div>
+</form>

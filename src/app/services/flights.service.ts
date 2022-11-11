@@ -10,7 +10,16 @@ export class FlightsService {
   journeyDetails! : FlightSearch
   flightDetails! : FlightResult
   passengerDetails! : PassengerDetails[]
+  pageName! : string
   constructor() {}
+
+  setPageName(pageName : string){
+    this.pageName = pageName
+  }
+
+  getPageName(){
+    return this.pageName
+  }
 
   setJourneyDetails(journeyDetails : FlightSearch){    
     this.journeyDetails = journeyDetails
