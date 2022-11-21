@@ -1,7 +1,8 @@
-<div class="row justify-content-center">
-  <div class="col-lg-7 my-5">
-    <h2>Payment Details</h2>
-  </div>
+<div class="row justify-content-center my-5 ">
+  <button type="button" class="btn btn-light btn-circle col-1" routerLink="/confirmation-page" style="margin-left: 135px;"><-</button>
+  <!-- <div class="col-7 my-5"> -->
+  <h2 class="col-6" style="margin-left: 135px;">Payment Details</h2>
+  <!-- </div> -->
 </div>
 <div class="row justify-content-center">
   <div class="col-lg-7 my-1 ">
@@ -9,27 +10,28 @@
       <div class="row">
         <div class="col-12">
           <div class="form__div">
-            <input type="text" class="form-control" placeholder="Card Number">
+            <!-- <input type="tel" inputmode="numeric" class="form-control" placeholder="Card Number" maxlength="19" autocomplete="cc-number" pattern="[0-9\s]{13,19}" autofocus required> -->
+            <input type="tel"  inputmode="numeric" class="form-control" placeholder="Card Number" maxlength="16" autofocus required>
             <!-- <label for="" class="form__label"></label> -->
           </div>
         </div>
 
         <div class="col-6">
           <div class="form__div">
-            <input type="date" class="form-control" placeholder="MM/YY ">
+            <input type="text" class="form-control" placeholder="MM/YYYY" maxlength="7" minlength="7"  autocomplete="cc-exp" required>
             <!-- <label for="" class="form__label">MM / yy</label> -->
           </div>
         </div>
 
         <div class="col-6">
           <div class="form__div">
-            <input type="password" class="form-control" placeholder="CVV">
+            <input type="password" class="form-control" placeholder="CVV"  maxlength="3" required>
             <!-- <label for="" class="form__label">cvv code</label> -->
           </div>
         </div>
         <div class="col-12">
           <div class="form__div">
-            <input type="text" class="form-control" placeholder="Card holder name">
+            <input type="text" class="form-control" placeholder="Card holder name" required>
             <!-- <label for="" class="form__label">name on the card</label> -->
           </div>
         </div>

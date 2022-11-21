@@ -1,7 +1,9 @@
 export class FlightSearch{
-    boarding : string | undefined
-    destination : string | undefined
-    departure : string | undefined
-    return : string | undefined
-    travelclass : string | undefined
+    boarding! : string
+    destination! : string 
+    departure! : string 
+    returnDate! : string
+    travelclass! : string 
+    returnDisplay! : string
+    isRoundTrip! : boolean 
 }

@@ -1,13 +1,13 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmit()" class="ms-5 ps-5">
   <div class="row g-3 mt-3 ms-1">
     <div class="form-check col-auto">
-      <input class="form-check-input" type="radio" name="trip-type" id="oneway" (click)="checkOneway()" checked>
+      <input class="form-check-input" type="radio" name="trip-type" id="oneway" (click)="checkOneway()" [checked]="!flightSearch.isRoundTrip">
       <label class="form-check-label" for="oneway">
         Oneway
       </label>
     </div>
     <div class="form-check col-auto">
-      <input class="form-check-input" type="radio" name="trip-type" id="roundtrip" (click)="checkRoundtrip()">
+      <input class="form-check-input" type="radio" name="trip-type" id="roundtrip" (click)="checkRoundtrip()" [checked]="flightSearch.isRoundTrip">
       <label class="form-check-label" for="roundtrip">
         Round Trip
       </label>
@@ -40,10 +40,12 @@
       <label for="departure" class="form-label">Departure</label>
       <input type="date" [(ngModel)]="flightSearch.departure" class="form-control" name="departure">
     </div>
-    <div class="col-auto" [style.display]="returnDisplay">
+    
+    <div class="col-auto" [style.display]="flightSearch.returnDisplay">
       <label for="return" class="form-label">Return</label>
-      <input type="date" [(ngModel)]="flightSearch.return" class="form-control" name="return">
+      <input type="date" [(ngModel)]="flightSearch.returnDate" class="form-control" name="return">
     </div>
+
     <div class="col-auto">
       <label for="travelclass" class="form-label">Class</label>
       <select [(ngModel)]="flightSearch.travelclass" class="form-control" name="travelclass">

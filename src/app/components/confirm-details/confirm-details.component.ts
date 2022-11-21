@@ -20,4 +20,8 @@ export class ConfirmDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.fare = Number(this.flightDetails.fare) * this.passengerDetails.length
   }
+
+  // goBack(){
+  //   this.router?.navigateByUrl("/passenger-details")
+  // }
 }

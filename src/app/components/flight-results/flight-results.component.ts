@@ -29,7 +29,7 @@ export class FlightResultsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.journeyDetails = this.flightsService?.getJourneyDetails();
+    this.journeyDetails = this.flightsService?.getFlightSearch();
 
     this.resflights = this.flights.filter((obj) => {                  //filter flights and get resflights     
       return (

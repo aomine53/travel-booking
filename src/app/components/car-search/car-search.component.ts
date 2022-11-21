@@ -12,7 +12,7 @@ import * as data from '../../../assets/flights.json';
   styleUrls: ['./car-search.component.css']
 })
 export class CarSearchComponent implements OnInit {
-  flightSearch: FlightSearch;
+  flightSearch!: FlightSearch;
   returnDisplay: string;
   boardingPlaces: string[];
   destinationPlaces: string[];
@@ -20,19 +20,18 @@ export class CarSearchComponent implements OnInit {
   pageName! : string;
   constructor(private flightsService: FlightsService, private router: Router) {
     this.returnDisplay = 'none';
-    this.flightSearch = {
-      boarding: '',
-      destination: '',
-      departure: '',
-      return: '',
-      travelclass: '',
-    };
     this.flights = (data as any).default;
     this.boardingPlaces = [];
     this.destinationPlaces = [];
   }
 
   ngOnInit(): void {
+    if(this.flightsService.getFlightSearch() === undefined){
+      this.flightSearch = new FlightSearch()
+    }else{
+      this.flightSearch = this.flightsService.getFlightSearch()
+    }
+
     this.flights.forEach((flight) => {
       this.boardingPlaces.push(flight.boarding);
     });

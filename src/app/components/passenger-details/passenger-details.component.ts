@@ -13,31 +13,37 @@ export class PassengerDetailsComponent implements OnInit {
   flightDetails!: FlightResult
   depatureTime! : string
   temp!: PassengerDetails
-  dataArray! : PassengerDetails[]
+  passengerDetails! : PassengerDetails[]
   len! : number
   
   constructor(private flightsService : FlightsService, private router : Router) { 
     this.flightDetails = flightsService.getFlightDetails()
-    this.dataArray = []
+    this.passengerDetails = flightsService.getPassengerDetails()
+    // this.dataArray = []
   }
 
   ngOnInit(): void {
-    this.len = this.dataArray.length
+    console.log(this.passengerDetails);
+    if(this.passengerDetails === undefined){
+      this.passengerDetails = []
+    }
+    
+    this.len = this.passengerDetails.length
   }
 
   addForm(){
     this.temp = new PassengerDetails()
-    this.dataArray.push(this.temp)
-    this.len = this.dataArray.length
+    this.passengerDetails.push(this.temp)
+    this.len = this.passengerDetails.length
   }
 
   deleteForm(index : number){
-    this.dataArray.splice(index)
+    this.passengerDetails.splice(index)
   }
 
   onSubmit(){
-    // console.log(this.dataArray);
-    this.flightsService.setPassengerDetails(this.dataArray);
+    // console.log(this.passengerDetails);
+    this.flightsService.setPassengerDetails(this.passengerDetails);
     this.router?.navigateByUrl("/confirmation-page");
     // console.log(this.flightsService.getPassengerDetails());
   }

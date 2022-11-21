@@ -1,6 +1,9 @@
 <div *ngIf="resflights.length != 0; else elseBlock" class="container">
   <div class="row my-3">
     <div class="col-2">
+      <a type="button" class="btn btn-secondary" routerLink="/"><-</a>
+    </div>
+    <div class="col-2">
       <select class="form-select" [(ngModel)]="filterByParam">
         <option value="duration">Duration</option>
         <option value="fare">Amount</option>

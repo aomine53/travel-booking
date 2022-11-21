@@ -16,7 +16,7 @@
 
 <div class="container">
   <form (ngSubmit)="onSubmit()">
-    <div *ngFor="let obj of dataArray; let i=index" class="mt-5">
+    <div *ngFor="let obj of passengerDetails; let i=index" class="mt-5">
       <div class="row justify-content-center ">
         <div class="col-auto">
           <label for="fname" class="form-label">First Name</label>
@@ -58,6 +58,7 @@
     </div>
 
     <div class="row justify-content-center my-5">
+      <button type="button" class="btn btn-secondary col-2" routerLink="/flight-results">All Flights</button>
       <button type="button" class="btn btn-success col-2 mx-3" (click)="addForm()">Add Passenger</button>
       <button type="submit" class="btn btn-primary col-2" *ngIf="len!=0">Submit</button>
     </div>

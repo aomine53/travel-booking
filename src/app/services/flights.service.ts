@@ -7,7 +7,7 @@ import { PassengerDetails } from '../models/passenger-details.model';
   providedIn: 'root'
 })
 export class FlightsService {
-  journeyDetails! : FlightSearch
+  flightSearch! : FlightSearch
   flightDetails! : FlightResult
   passengerDetails! : PassengerDetails[]
   pageName! : string
@@ -21,12 +21,12 @@ export class FlightsService {
     return this.pageName
   }
 
-  setJourneyDetails(journeyDetails : FlightSearch){    
-    this.journeyDetails = journeyDetails
+  setFlightSearch(flightSearch : FlightSearch){    
+    this.flightSearch = flightSearch
   }
 
-  getJourneyDetails(){    
-    return this.journeyDetails
+  getFlightSearch(){    
+    return this.flightSearch
   }
 
   setFlightDetails(flightDetails : FlightResult){

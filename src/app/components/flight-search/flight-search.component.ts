@@ -11,55 +11,54 @@ import * as data from '../../../assets/flights.json';
   styleUrls: ['./flight-search.component.css'],
 })
 export class FlightSearchComponent implements OnInit {
-  flightSearch: FlightSearch;
-  returnDisplay: string;
+  flightSearch!: FlightSearch;
   boardingPlaces: string[];
   destinationPlaces: string[];
   flights: FlightResult[];
   pageName!: string;
   constructor(private flightsService: FlightsService, private router: Router) {
-    this.returnDisplay = 'none';
-    this.flightSearch = {
-      boarding: '',
-      destination: '',
-      departure: '',
-      return: '',
-      travelclass: '',
-    };
     this.flights = (data as any).default;
     this.boardingPlaces = [];
     this.destinationPlaces = [];
   }
 
   ngOnInit(): void {
-    this.flights.forEach((flight) => {
+    if(this.flightsService.getFlightSearch() === undefined){
+      this.flightSearch = new FlightSearch()
+      this.flightSearch.returnDisplay = "none"
+      this.flightSearch.isRoundTrip = false
+    }else{
+      this.flightSearch = this.flightsService.getFlightSearch()
+    }
+
+    this.flights.forEach((flight) => {                          // Pushes all the boarding places from json to a variable
       this.boardingPlaces.push(flight.boarding);
-    });
-    
+    }); 
     this.boardingPlaces = Array.from(new Set(this.boardingPlaces))
     
+
     this.flights.forEach((flight) => {
       this.destinationPlaces.push(flight.destination);
     });
-    
     this.destinationPlaces = Array.from(new Set(this.destinationPlaces))
+
 
     this.pageName = "tickets are"
     this.flightsService.setPageName(this.pageName)
   }
 
   checkOneway() {
-    this.returnDisplay = 'none';
+    this.flightSearch.returnDisplay = 'none';
+    this.flightSearch.isRoundTrip = false;
   }
 
   checkRoundtrip() {
-    console.log('inside checkRoundtrip');
-
-    this.returnDisplay = 'block';
+    this.flightSearch.returnDisplay = 'block';
+    this.flightSearch.isRoundTrip = true;
   }
 
   onSubmit() {
-    this.flightsService.setJourneyDetails(this.flightSearch);
+    this.flightsService.setFlightSearch(this.flightSearch);
     this.router?.navigateByUrl('/flight-results');
   }
 
