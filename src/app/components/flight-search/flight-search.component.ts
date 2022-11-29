@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FlightResult } from 'src/app/models/flight-result.model';
 import { FlightSearch } from 'src/app/models/flight-search.model';
@@ -57,7 +58,7 @@ export class FlightSearchComponent implements OnInit {
     this.flightSearch.isRoundTrip = true;
   }
 
-  onSubmit() {
+  onSubmit() {    
     this.flightsService.setFlightSearch(this.flightSearch);
     this.router?.navigateByUrl('/flight-results');
   }

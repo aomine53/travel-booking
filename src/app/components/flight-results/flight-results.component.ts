@@ -12,11 +12,13 @@ import * as data from '../../../assets/flights.json';
 export class FlightResultsComponent implements OnInit {
   sortByParam! : string
   sortDirection! : string
+
   filterByParam! : string
   filterString! : string
   filterString1! : string
   setfilterString! : string
   setfilterString1! : string
+  
   journeyDetails?: FlightSearch;
   flights: FlightResult[];
   resflights! : FlightResult[];
@@ -59,6 +61,7 @@ export class FlightResultsComponent implements OnInit {
   }
 
   addFilter(){
+    console.log();
     this.setfilterString = this.filterString
     this.setfilterString1 = this.filterString1
   }

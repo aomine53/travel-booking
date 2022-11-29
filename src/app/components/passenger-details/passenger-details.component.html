@@ -10,31 +10,31 @@
   <h5>
     <pre>{{flightDetails.departureTime}}       {{flightDetails.arrivalTime}}</pre>
   </h5>
-  <h4>₹ {{flightDetails.fare}}/-</h4>
-  <small>FOR 1 ADULT</small>
+  <h4>₹ {{totalFare}}/-</h4>
+  <small>FOR {{len}} ADULT</small>
 </div>
 
 <div class="container">
-  <form (ngSubmit)="onSubmit()">
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
     <div *ngFor="let obj of passengerDetails; let i=index" class="mt-5">
       <div class="row justify-content-center ">
         <div class="col-auto">
           <label for="fname" class="form-label">First Name</label>
-          <input type="text" name="fname{{i}}" [(ngModel)]="obj.fname" class="form-control">
+          <input type="text" name="fname{{i}}" [(ngModel)]="obj.fname" class="form-control" required>
         </div>
         <div class="col-auto">
           <label for="lname" class="form-label">Last Name</label>
-          <input type="text" name="lname{{i}}" [(ngModel)]="obj.lname" class="form-control">
+          <input type="text" name="lname{{i}}" [(ngModel)]="obj.lname" class="form-control" required>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-2">
           <label for="age" class="form-label">Age</label>
-          <input type="number" name="age{{i}}" [(ngModel)]="obj.age" class="form-control">
+          <input type="number" name="age{{i}}" [(ngModel)]="obj.age" class="form-control" required>
         </div>
         <div class="col-3">
           <label for="travelclass" class="form-label">Class</label>
-          <select name="travelclass{{i}}" [(ngModel)]="obj.travelClass" class="form-control">
+          <select name="travelclass{{i}}" [(ngModel)]="obj.travelClass" class="form-control" required>
             <option value="economy">Economy</option>
             <option value="business">Business</option>
           </select>
@@ -43,13 +43,13 @@
       <div class="row justify-content-center">
         <div class="col-5">
           <label for="email" class="form-label">Email</label>
-          <input type="email" name="email{{i}}" [(ngModel)]="obj.email" class="form-control">
+          <input type="email" name="email{{i}}" [(ngModel)]="obj.email" class="form-control" required email>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-5">
           <label for="contactNo" class="form-label">Mobile Number</label>
-          <input type="number" name="contactNo{{i}}" [(ngModel)]="obj.contactNo" class="form-control">
+          <input type="number" name="contactNo{{i}}" [(ngModel)]="obj.contactNo" class="form-control" required>
         </div>
       </div>
       <div class="row justify-content-center my-3">
@@ -60,7 +60,7 @@
     <div class="row justify-content-center my-5">
       <button type="button" class="btn btn-secondary col-2" routerLink="/flight-results">All Flights</button>
       <button type="button" class="btn btn-success col-2 mx-3" (click)="addForm()">Add Passenger</button>
-      <button type="submit" class="btn btn-primary col-2" *ngIf="len!=0">Submit</button>
+      <button type="submit" class="btn btn-primary col-2" *ngIf="len>0" [disabled]="f.invalid">Submit</button>
     </div>
   </form>
 </div>

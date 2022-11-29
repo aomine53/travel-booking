@@ -11,10 +11,10 @@ import { FlightsService } from 'src/app/services/flights.service';
 })
 export class PassengerDetailsComponent implements OnInit {
   flightDetails!: FlightResult
-  depatureTime! : string
   temp!: PassengerDetails
   passengerDetails! : PassengerDetails[]
   len! : number
+  totalFare! : number
   
   constructor(private flightsService : FlightsService, private router : Router) { 
     this.flightDetails = flightsService.getFlightDetails()
@@ -23,22 +23,29 @@ export class PassengerDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.passengerDetails);
     if(this.passengerDetails === undefined){
       this.passengerDetails = []
+      this.temp = new PassengerDetails()
+      this.passengerDetails.push(this.temp)
     }
-    
-    this.len = this.passengerDetails.length
+    this.len = this.passengerDetails.length   
+    this.totalFare = Number(this.flightDetails.fare) * this.len
   }
 
   addForm(){
     this.temp = new PassengerDetails()
     this.passengerDetails.push(this.temp)
-    this.len = this.passengerDetails.length
+    this.len++
+    this.totalFare = Number(this.flightDetails.fare) * this.len
+    // console.log("Add "+ this.len);
   }
 
   deleteForm(index : number){
-    this.passengerDetails.splice(index)
+    this.passengerDetails.splice(index,1)
+    this.len--
+    this.totalFare = Number(this.flightDetails.fare) * this.len
+    // console.log("Delete "+ this.len);
+    
   }
 
   onSubmit(){
