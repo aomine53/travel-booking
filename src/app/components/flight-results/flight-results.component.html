@@ -11,12 +11,9 @@
     </div>
     <div class="col-5">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="From" [(ngModel)]="filterString" required>
-        <!-- <input type="text" class="form-control" placeholder="From" [(ngModel)]="filterString" #fil1="ngModel" required> -->
-        <input type="text" class="form-control" placeholder="To" [(ngModel)]="filterString1" required>
-        <!-- <input type="text" class="form-control" placeholder="To" [(ngModel)]="filterString1" #fil2="ngModel" required> -->
-        <button class="btn btn-outline-secondary" type="button" (click)="addFilter()">Apply</button>
-        <!-- <button class="btn btn-outline-secondary" type="button" (click)="addFilter(fil1, fil2)">Apply</button> -->
+        <input type="number" class="form-control" placeholder="From" #i1="ngModel" [(ngModel)]="filterString" required>
+        <input type="number" class="form-control" placeholder="To" #i2="ngModel" [(ngModel)]="filterString1" required>
+        <button class="btn btn-outline-secondary" type="button" [disabled]="i1.invalid || i2.invalid" (click)="addFilter()">Apply</button>
         <button class="btn btn-outline-secondary" type="button" (click)="clearFilters()">Clear</button>
       </div>
     </div>

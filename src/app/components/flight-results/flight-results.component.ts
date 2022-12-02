@@ -18,7 +18,6 @@ export class FlightResultsComponent implements OnInit {
   filterString1! : string
   setfilterString! : string
   setfilterString1! : string
-  
   journeyDetails?: FlightSearch;
   flights: FlightResult[];
   resflights! : FlightResult[];
@@ -61,7 +60,6 @@ export class FlightResultsComponent implements OnInit {
   }
 
   addFilter(){
-    console.log();
     this.setfilterString = this.filterString
     this.setfilterString1 = this.filterString1
   }
@@ -69,5 +67,7 @@ export class FlightResultsComponent implements OnInit {
   clearFilters(){
     this.setfilterString = ''
     this.setfilterString1 = ''
+    this.filterString = ''
+    this.filterString1 = ''    
   }
 }

@@ -38,12 +38,12 @@
     </div>
     <div class="col-auto">
       <label for="departure" class="form-label">Departure</label>
-      <input type="date" [(ngModel)]="flightSearch.departure" class="form-control" name="departure" required>
+      <input type="date" [(ngModel)]="flightSearch.departure" class="form-control" name="departure" [min]="minDate | date:'yyyy-MM-dd'" required>
     </div>
     
     <div class="col-auto" [style.display]="flightSearch.returnDisplay">
       <label for="return" class="form-label">Return</label>
-      <input type="date" [(ngModel)]="flightSearch.returnDate" class="form-control" name="return" [required]="flightSearch.isRoundTrip">
+      <input type="date" [(ngModel)]="flightSearch.returnDate" class="form-control" name="return" [min]="flightSearch.departure" [required]="flightSearch.isRoundTrip">
     </div>
 
     <div class="col-auto">

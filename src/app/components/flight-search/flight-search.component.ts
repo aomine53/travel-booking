@@ -17,10 +17,12 @@ export class FlightSearchComponent implements OnInit {
   destinationPlaces: string[];
   flights: FlightResult[];
   pageName!: string;
+  minDate!: Date;
   constructor(private flightsService: FlightsService, private router: Router) {
     this.flights = (data as any).default;
     this.boardingPlaces = [];
     this.destinationPlaces = [];
+    this.minDate = new Date();
   }
 
   ngOnInit(): void {

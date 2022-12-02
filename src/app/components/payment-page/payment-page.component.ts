@@ -12,9 +12,7 @@ export class PaymentPageComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onSubmit() {
-    console.log("hiii");
-    
+  onSubmit() {    
     this.router.navigateByUrl('/success-page');
   }
 }

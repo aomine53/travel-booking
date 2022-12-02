@@ -6,37 +6,37 @@
 </div>
 <div class="row justify-content-center">
   <div class="col-lg-7 my-1 ">
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
       <div class="row">
         <div class="col-12">
           <div class="form__div">
-            <!-- <input type="tel" inputmode="numeric" class="form-control" placeholder="Card Number" maxlength="19" autocomplete="cc-number" pattern="[0-9\s]{13,19}" autofocus required> -->
-            <input type="tel"  inputmode="numeric" class="form-control" placeholder="Card Number" maxlength="16" autofocus required>
+            <input type="tel" inputmode="numeric" class="form-control" placeholder="Card Number" maxlength="16" autocomplete="cc-number" pattern="[0-9\s]{13,19}" ngModel name="card_number" autofocus required>
+            <!-- <input type="tel"  inputmode="numeric" class="form-control" placeholder="Card Number" maxlength="16" autofocus required> -->
             <!-- <label for="" class="form__label"></label> -->
           </div>
         </div>
 
         <div class="col-6">
           <div class="form__div">
-            <input type="text" class="form-control" placeholder="MM/YYYY" maxlength="7" minlength="7"  autocomplete="cc-exp" required>
+            <input type="text" class="form-control" placeholder="MM/YYYY" maxlength="7" minlength="7"  autocomplete="cc-exp" ngModel name="card_exp" required>
             <!-- <label for="" class="form__label">MM / yy</label> -->
           </div>
         </div>
 
         <div class="col-6">
           <div class="form__div">
-            <input type="password" class="form-control" placeholder="CVV"  maxlength="3" required>
+            <input type="password" class="form-control" placeholder="CVV"  maxlength="3" ngModel name="card_cvv" required>
             <!-- <label for="" class="form__label">cvv code</label> -->
           </div>
         </div>
         <div class="col-12">
           <div class="form__div">
-            <input type="text" class="form-control" placeholder="Card holder name" required>
+            <input type="text" class="form-control" placeholder="Card Holder Name" ngModel name="card_holder" required>
             <!-- <label for="" class="form__label">name on the card</label> -->
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary w-100" type="submit">Submit</button>
+          <button class="btn btn-primary w-100" type="submit" [disabled]="!f.valid">Submit</button>
         </div>
       </div>
     </form>
