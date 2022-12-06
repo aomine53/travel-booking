@@ -1,7 +1,7 @@
 <div *ngIf="resflights.length != 0; else elseBlock" class="container">
   <div class="row my-3">
     <div class="col-2">
-      <a type="button" class="btn btn-secondary" routerLink="/"><-</a>
+      <a type="button" class="btn btn-light btn-circle col-1" routerLink="/"><i class="fas fa-thin fa-chevron-left"></i></a>
     </div>
     <div class="col-2">
       <select class="form-select" [(ngModel)]="filterByParam">
@@ -30,8 +30,8 @@
           <th scope="col">To</th>
           <th scope="col">Departure Time</th>
           <th scope="col">Arrival Time</th>
-          <th scope="col"><a type="button" (click)="onSort1()">Duration( Hours)</a></th>
-          <th scope="col"><a type="button" (click)="onSort()">Amount</a></th>
+          <th scope="col"><a type="button" (click)="onSort1()">Duration( Hours) <i class="fa-solid fa-sort"></i></a></th>
+          <th scope="col"><a type="button" (click)="onSort()" >Amount <i class="fa-solid fa-sort"></i></a></th>
           <th scope="col">Action</th>
         </tr>
       </thead>
