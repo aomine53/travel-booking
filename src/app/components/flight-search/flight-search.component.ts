@@ -18,11 +18,15 @@ export class FlightSearchComponent implements OnInit {
   flights: FlightResult[];
   pageName!: string;
   minDate!: Date;
+  formstyle!: string;
+  subbutton!: string;
   constructor(private flightsService: FlightsService, private router: Router) {
     this.flights = (data as any).default;
     this.boardingPlaces = [];
     this.destinationPlaces = [];
     this.minDate = new Date();
+    this.formstyle = "form-container";
+    this.subbutton = "sub-button";
   }
 
   ngOnInit(): void {
@@ -53,11 +57,15 @@ export class FlightSearchComponent implements OnInit {
   checkOneway() {
     this.flightSearch.returnDisplay = 'none';
     this.flightSearch.isRoundTrip = false;
+    this.formstyle = "form-container";
+    this.subbutton = "sub-button";
   }
 
   checkRoundtrip() {
     this.flightSearch.returnDisplay = 'block';
     this.flightSearch.isRoundTrip = true;
+    this.formstyle = "form-container1";
+    this.subbutton = "sub-button1";
   }
 
   onSubmit() {    
