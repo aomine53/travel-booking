@@ -21,10 +21,10 @@
       <div class="row g-3">
         <div class="col-auto">
           <label for="boarding" class="form-label">From</label>
-          <input type="text" [(ngModel)]="flightSearch.boarding" class="form-control" name="boarding" list="boardplaces"
+          <input type="text" [(ngModel)]="flightSearch.boarding" (keyup)="onKeyup()" class="form-control" name="boarding" list="boardplaces"
             autocomplete="off" required>
           <datalist id="boardplaces">
-            <option *ngFor="let place of boardingPlaces" [value]="place">{{place}}</option>
+            <option *ngFor="let place of finalBoarding" [value]="place">{{place}}</option>
           </datalist>
         </div>
         <div class="col-auto align-self-end">
@@ -34,10 +34,10 @@
         </div>
         <div class="col-auto">
           <label for="destination" class="form-label">To</label>
-          <input type="text" [(ngModel)]="flightSearch.destination" class="form-control" name="destination"
+          <input type="text" [(ngModel)]="flightSearch.destination" (keyup)="onKeyup1()" class="form-control" name="destination"
             list="destplaces" autocomplete="off" required>
           <datalist id="destplaces">
-            <option *ngFor="let place of destinationPlaces" [value]="place">{{place}}</option>
+            <option *ngFor="let place of finalDest" [value]="place">{{place}}</option>
           </datalist>
         </div>
         <div class="col-auto">

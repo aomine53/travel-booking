@@ -20,9 +20,12 @@ export class FlightSearchComponent implements OnInit {
   minDate!: Date;
   formstyle!: string;
   subbutton!: string;
+  finalBoarding!: string[];
+  finalDest!: string[];
   constructor(private flightsService: FlightsService, private router: Router) {
     this.flights = (data as any).default;
     this.boardingPlaces = [];
+    this.finalBoarding = [];
     this.destinationPlaces = [];
     this.minDate = new Date();
     this.formstyle = "form-container";
@@ -52,6 +55,24 @@ export class FlightSearchComponent implements OnInit {
 
     this.pageName = "tickets are"
     this.flightsService.setPageName(this.pageName)
+  }
+
+  onKeyup(){
+    this.finalBoarding = [];
+    this.boardingPlaces.forEach( x =>{
+      if(x.toLowerCase().indexOf(this.flightSearch.boarding.toLowerCase()) === 0){
+        this.finalBoarding.push(x);
+      }
+    })        
+  }
+
+  onKeyup1(){
+    this.finalDest = [];
+    this.destinationPlaces.forEach( x =>{
+      if(x.toLowerCase().indexOf(this.flightSearch.destination.toLowerCase()) === 0){
+        this.finalDest.push(x);
+      }
+    })        
   }
 
   checkOneway() {
