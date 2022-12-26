@@ -18,11 +18,23 @@ export class HotelSearchComponent implements OnInit {
   destinationPlaces: string[];
   flights: FlightResult[];
   pageName! : string;
+  minDate! : Date;
+  startDate! : Date;
+  endDate!: Date;
+  minDate2!: Date;
+  subbutton!: string;
+  formstyle!: string;
+
   constructor(private flightsService: FlightsService, private router: Router) {
     this.returnDisplay = 'none';
     this.flights = (data as any).default;
     this.boardingPlaces = [];
     this.destinationPlaces = [];
+    this.minDate = new Date();
+    this.minDate2 = this.minDate;
+
+    this.formstyle = "form-container";
+    this.subbutton = "sub-button";
   }
 
   ngOnInit(): void {
@@ -56,5 +68,10 @@ export class HotelSearchComponent implements OnInit {
     var temp = this.flightSearch.destination;
     this.flightSearch.destination = this.flightSearch.boarding;
     this.flightSearch.boarding = temp;
+  }
+
+  changeMinDate(){
+    this.minDate2 = new Date(this.startDate);
+    this.minDate2.setDate( this.minDate2.getDate() + 1)
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClient} from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
 import { FlightResult } from 'src/app/models/flight-result.model';
 import { FlightSearch } from 'src/app/models/flight-search.model';
@@ -21,7 +22,7 @@ export class FlightResultsComponent implements OnInit {
   journeyDetails?: FlightSearch;
   flights: FlightResult[];
   resflights! : FlightResult[];
-  constructor(private flightsService: FlightsService) {
+  constructor(private flightsService: FlightsService, private http : HttpClient) {
     this.filterByParam = 'fare'
     this.setfilterString = ''
     this.setfilterString1 = ''
@@ -39,6 +40,14 @@ export class FlightResultsComponent implements OnInit {
       );
     });  
     
+
+    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
+      Response => {
+        console.log(Response);  
+      }
+    );
+
+
   }
 
   onSort(){

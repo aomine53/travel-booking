@@ -1,30 +1,35 @@
 
+<div [ngClass]="[formstyle]">
 
-<form #myForm="ngForm" (ngSubmit)="onSubmit()" class="ms-5 ps-5">
+
+<form #f="ngForm" (ngSubmit)="onSubmit()" class="ms-5 ps-5">
 
   <div class="row g-3 mt-5" >
     <div class="col-auto">
       <label for="boarding" class="form-label">Destination</label>
       <input type="text" [(ngModel)]="flightSearch.boarding" class="form-control" name="boarding" list="boardplaces"
-        autocomplete="off">
+        autocomplete="off" required>
       <datalist id="boardplaces">
         <option *ngFor="let place of boardingPlaces" [value]="place">{{place}}</option>
       </datalist>
     </div>
     <div class="col-auto">
       <label for="checkin" class="form-label">Check in</label>
-      <input type="date"  class="form-control" name="checkin">
+      <input type="date"  [(ngModel)]="startDate" class="form-control" name="date1"
+      [min]="minDate | date:'yyyy-MM-dd'" (change)="changeMinDate()" required>
     </div>
     <div class="col-auto">
       <label for="checkout" class="form-label">Check out</label>
-      <input type="date" class="form-control" name="checkout">
+      <input type="date" ngModel class="form-control" name="date2"
+      [min]="minDate2 | date:'yyyy-MM-dd'" [disabled]="startDate == undefined"  required>
     </div>
     <div class="col-auto">
         <label for="rooms" class="form-label">Rooms</label>
-        <input type="number" class="form-control" name="rooms">
+        <input type="number" ngModel class="form-control" name="rooms" required>
     </div>
     <div class="row justify-content-start mt-3" style="margin-left: 275px;">
-      <button type="submit" class="btn btn-primary col-md-3">SEARCH HOTELS</button>
+      <button type="submit" class="btn btn-primary col-md-3" [disabled]="!f.valid" [ngClass]="[subbutton]">SEARCH HOTELS</button>
     </div>
   </div>
 </form>
+</div>
